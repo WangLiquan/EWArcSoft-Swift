@@ -117,7 +117,7 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                     let faceRectView: UIView = weakSelf.allFaceRectViewArray[index]
                     let faceInfo: ASFVideoFaceInfo = faceInfoArray[index]
                     faceRectView.frame = weakSelf.dataFaceRectToViewFaceRect(faceRect: faceInfo.faceRect)
-
+                    guard faceInfo.face3DAngle != nil else { return }
                     guard faceInfo.face3DAngle.status == 0 else { return }
                     guard faceInfo.face3DAngle.rollAngle <= 10 && faceInfo.face3DAngle.rollAngle >= -10 else { return }
                     guard faceInfo.face3DAngle.yawAngle <= 10 && faceInfo.face3DAngle.yawAngle >= -10 else { return }
@@ -133,39 +133,20 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                     UIView.animate(withDuration: 1.3, animations: {
                         weakSelf.showImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
                     }, completion: { (finished) in
-                        
+                        let animationView = EWRippleAnimationView(frame:CGRect(x: 0, y: 0, width: weakSelf.showImageView.frame.size.width , height: weakSelf.showImageView.frame.size.height))
+                        animationView.center = weakSelf.showImageView.center
+                        weakSelf.imageBackView.addSubview(animationView)
+                        weakSelf.imageBackView.bringSubviewToFront(weakSelf.showImageView)
+                        let vc = EWShowImageViewController()
+                        vc.image = resultImage
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: {
+                            weakSelf.present(vc, animated: false, completion: nil)
+                        })
                     })
 
                 }
             }
             Utility.freeCameraData(cameraData)
         }
-//
-//                                    [UIView animateWithDuration:1.3 animations:^{
-//                                    self->showImageView.transform =CGAffineTransformMakeScale(0.7, 0.7);
-//                                    } completion:^(BOOL finished) {
-//                                    RippleAnimationView *viewA = [[RippleAnimationView alloc] initWithFrame:CGRectMake(0, 0, self->showImageView.frame.size.width, self->showImageView.frame.size.height) animationType:AnimationTypeWithBackground];
-//                                    viewA.center = self->showImageView.center;
-//                                    [self->imageBackView addSubview:viewA];
-//                                    [self->imageBackView bringSubviewToFront:self->showImageView];
-//                                    ImageShowViewController *vc = [[ImageShowViewController alloc] init];
-//                                    vc.image = resultImage;
-//                                    double delayInSeconds = 2.0;
-//                                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-//                                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//
-//                                    [weakself presentViewController:vc animated:false completion:nil];
-//                                    });
-//
-//
-//                                    }];
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//                });
-//            /// 释放内存
-//            [Utility freeCameraData:cameraData];
     }
 }

@@ -26,6 +26,8 @@
 		79EA25DD21CC95FC001FE1CB /* EWCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */; };
 		79EA25DF21CC9B35001FE1CB /* EWVideoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25DE21CC9B35001FE1CB /* EWVideoCheckViewController.swift */; };
 		79EA25E121CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25E021CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift */; };
+		79EA25E321CCD0F4001FE1CB /* EWRippleAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25E221CCD0F4001FE1CB /* EWRippleAnimationView.swift */; };
+		79EA25E521CCD99A001FE1CB /* EWShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25E421CCD99A001FE1CB /* EWShowImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWCameraController.swift; sourceTree = "<group>"; };
 		79EA25DE21CC9B35001FE1CB /* EWVideoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWVideoCheckViewController.swift; sourceTree = "<group>"; };
 		79EA25E021CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Extension.swift"; sourceTree = "<group>"; };
+		79EA25E221CCD0F4001FE1CB /* EWRippleAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWRippleAnimationView.swift; sourceTree = "<group>"; };
+		79EA25E421CCD99A001FE1CB /* EWShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWShowImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +137,11 @@
 			children = (
 				79EA25D921CC8CBD001FE1CB /* ArcSoftFace */,
 				79EA25E021CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift */,
+				79EA25E221CCD0F4001FE1CB /* EWRippleAnimationView.swift */,
 				79EA257A21CC891F001FE1CB /* ViewController.swift */,
 				79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */,
 				79EA25DE21CC9B35001FE1CB /* EWVideoCheckViewController.swift */,
+				79EA25E421CCD99A001FE1CB /* EWShowImageViewController.swift */,
 				79EA25C421CC8B89001FE1CB /* Other */,
 			);
 			path = "EWArcSoft-Swift";
@@ -341,8 +347,10 @@
 				79EA25D621CC8CB4001FE1CB /* ASFRManager.m in Sources */,
 				79EA25DD21CC95FC001FE1CB /* EWCameraController.swift in Sources */,
 				79EA257921CC891F001FE1CB /* AppDelegate.swift in Sources */,
+				79EA25E321CCD0F4001FE1CB /* EWRippleAnimationView.swift in Sources */,
 				79EA25D321CC8CB4001FE1CB /* FSDKFR.xcdatamodeld in Sources */,
 				79EA25D721CC8CB4001FE1CB /* ASFRPerson.m in Sources */,
+				79EA25E521CCD99A001FE1CB /* EWShowImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
