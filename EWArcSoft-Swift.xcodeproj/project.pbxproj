@@ -24,6 +24,8 @@
 		79EA25D721CC8CB4001FE1CB /* ASFRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25D021CC8CB3001FE1CB /* ASFRPerson.m */; };
 		79EA25D821CC8CB4001FE1CB /* ASFRCDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25D121CC8CB4001FE1CB /* ASFRCDManager.m */; };
 		79EA25DD21CC95FC001FE1CB /* EWCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */; };
+		79EA25DF21CC9B35001FE1CB /* EWVideoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25DE21CC9B35001FE1CB /* EWVideoCheckViewController.swift */; };
+		79EA25E121CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25E021CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		79EA25D021CC8CB3001FE1CB /* ASFRPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRPerson.m; sourceTree = "<group>"; };
 		79EA25D121CC8CB4001FE1CB /* ASFRCDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRCDManager.m; sourceTree = "<group>"; };
 		79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWCameraController.swift; sourceTree = "<group>"; };
+		79EA25DE21CC9B35001FE1CB /* EWVideoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWVideoCheckViewController.swift; sourceTree = "<group>"; };
+		79EA25E021CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				79EA25D921CC8CBD001FE1CB /* ArcSoftFace */,
+				79EA25E021CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift */,
 				79EA257A21CC891F001FE1CB /* ViewController.swift */,
 				79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */,
+				79EA25DE21CC9B35001FE1CB /* EWVideoCheckViewController.swift */,
 				79EA25C421CC8B89001FE1CB /* Other */,
 			);
 			path = "EWArcSoft-Swift";
@@ -326,10 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79EA25DF21CC9B35001FE1CB /* EWVideoCheckViewController.swift in Sources */,
 				79EA25D821CC8CB4001FE1CB /* ASFRCDManager.m in Sources */,
 				79EA25D521CC8CB4001FE1CB /* ASFVideoProcessor.mm in Sources */,
 				79EA257B21CC891F001FE1CB /* ViewController.swift in Sources */,
 				79EA25D221CC8CB4001FE1CB /* Utility.m in Sources */,
+				79EA25E121CCB29D001FE1CB /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 				79EA25D621CC8CB4001FE1CB /* ASFRManager.m in Sources */,
 				79EA25DD21CC95FC001FE1CB /* EWCameraController.swift in Sources */,
 				79EA257921CC891F001FE1CB /* AppDelegate.swift in Sources */,
