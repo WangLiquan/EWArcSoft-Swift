@@ -14,6 +14,16 @@
 		79EA258321CC8922001FE1CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EA258121CC8922001FE1CB /* LaunchScreen.storyboard */; };
 		79EA258E21CC8922001FE1CB /* EWArcSoft_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA258D21CC8922001FE1CB /* EWArcSoft_SwiftTests.swift */; };
 		79EA259921CC8922001FE1CB /* EWArcSoft_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA259821CC8922001FE1CB /* EWArcSoft_SwiftUITests.swift */; };
+		79EA25BD21CC8A31001FE1CB /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EA25BC21CC8A31001FE1CB /* libstdc++.6.0.9.tbd */; };
+		79EA25BF21CC8A40001FE1CB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EA25BE21CC8A40001FE1CB /* CoreMotion.framework */; };
+		79EA25D221CC8CB4001FE1CB /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25C521CC8CAE001FE1CB /* Utility.m */; };
+		79EA25D321CC8CB4001FE1CB /* FSDKFR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25C721CC8CAE001FE1CB /* FSDKFR.xcdatamodeld */; };
+		79EA25D421CC8CB4001FE1CB /* ArcSoftFaceEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EA25C921CC8CB2001FE1CB /* ArcSoftFaceEngine.framework */; };
+		79EA25D521CC8CB4001FE1CB /* ASFVideoProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25CC21CC8CB3001FE1CB /* ASFVideoProcessor.mm */; };
+		79EA25D621CC8CB4001FE1CB /* ASFRManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25CF21CC8CB3001FE1CB /* ASFRManager.m */; };
+		79EA25D721CC8CB4001FE1CB /* ASFRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25D021CC8CB3001FE1CB /* ASFRPerson.m */; };
+		79EA25D821CC8CB4001FE1CB /* ASFRCDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25D121CC8CB4001FE1CB /* ASFRCDManager.m */; };
+		79EA25DD21CC95FC001FE1CB /* EWCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,22 @@
 		79EA259421CC8922001FE1CB /* EWArcSoft-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EWArcSoft-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA259821CC8922001FE1CB /* EWArcSoft_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWArcSoft_SwiftUITests.swift; sourceTree = "<group>"; };
 		79EA259A21CC8922001FE1CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79EA25BC21CC8A31001FE1CB /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		79EA25BE21CC8A40001FE1CB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		79EA25C321CC8B1C001FE1CB /* EWArcSoft-Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EWArcSoft-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		79EA25C521CC8CAE001FE1CB /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		79EA25C621CC8CAE001FE1CB /* ASFVideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFVideoProcessor.h; sourceTree = "<group>"; };
+		79EA25C821CC8CAE001FE1CB /* FSDKFR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FSDKFR.xcdatamodel; sourceTree = "<group>"; };
+		79EA25C921CC8CB2001FE1CB /* ArcSoftFaceEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ArcSoftFaceEngine.framework; sourceTree = "<group>"; };
+		79EA25CA21CC8CB3001FE1CB /* ASFRPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFRPerson.h; sourceTree = "<group>"; };
+		79EA25CB21CC8CB3001FE1CB /* ASFRCDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFRCDManager.h; sourceTree = "<group>"; };
+		79EA25CC21CC8CB3001FE1CB /* ASFVideoProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ASFVideoProcessor.mm; sourceTree = "<group>"; };
+		79EA25CD21CC8CB3001FE1CB /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		79EA25CE21CC8CB3001FE1CB /* ASFRManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFRManager.h; sourceTree = "<group>"; };
+		79EA25CF21CC8CB3001FE1CB /* ASFRManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRManager.m; sourceTree = "<group>"; };
+		79EA25D021CC8CB3001FE1CB /* ASFRPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRPerson.m; sourceTree = "<group>"; };
+		79EA25D121CC8CB4001FE1CB /* ASFRCDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRCDManager.m; sourceTree = "<group>"; };
+		79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWCameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79EA25BF21CC8A40001FE1CB /* CoreMotion.framework in Frameworks */,
+				79EA25BD21CC8A31001FE1CB /* libstdc++.6.0.9.tbd in Frameworks */,
+				79EA25D421CC8CB4001FE1CB /* ArcSoftFaceEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +110,7 @@
 				79EA258C21CC8922001FE1CB /* EWArcSoft-SwiftTests */,
 				79EA259721CC8922001FE1CB /* EWArcSoft-SwiftUITests */,
 				79EA257621CC891F001FE1CB /* Products */,
+				79EA25BB21CC8A31001FE1CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +127,10 @@
 		79EA257721CC891F001FE1CB /* EWArcSoft-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				79EA257821CC891F001FE1CB /* AppDelegate.swift */,
+				79EA25D921CC8CBD001FE1CB /* ArcSoftFace */,
 				79EA257A21CC891F001FE1CB /* ViewController.swift */,
-				79EA257C21CC891F001FE1CB /* Main.storyboard */,
-				79EA257F21CC8922001FE1CB /* Assets.xcassets */,
-				79EA258121CC8922001FE1CB /* LaunchScreen.storyboard */,
-				79EA258421CC8922001FE1CB /* Info.plist */,
+				79EA25DC21CC95FC001FE1CB /* EWCameraController.swift */,
+				79EA25C421CC8B89001FE1CB /* Other */,
 			);
 			path = "EWArcSoft-Swift";
 			sourceTree = "<group>";
@@ -123,6 +151,47 @@
 				79EA259A21CC8922001FE1CB /* Info.plist */,
 			);
 			path = "EWArcSoft-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		79EA25BB21CC8A31001FE1CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79EA25BE21CC8A40001FE1CB /* CoreMotion.framework */,
+				79EA25BC21CC8A31001FE1CB /* libstdc++.6.0.9.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79EA25C421CC8B89001FE1CB /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				79EA257F21CC8922001FE1CB /* Assets.xcassets */,
+				79EA257821CC891F001FE1CB /* AppDelegate.swift */,
+				79EA257C21CC891F001FE1CB /* Main.storyboard */,
+				79EA258121CC8922001FE1CB /* LaunchScreen.storyboard */,
+				79EA258421CC8922001FE1CB /* Info.plist */,
+				79EA25C321CC8B1C001FE1CB /* EWArcSoft-Swift-Bridging-Header.h */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		79EA25D921CC8CBD001FE1CB /* ArcSoftFace */ = {
+			isa = PBXGroup;
+			children = (
+				79EA25C921CC8CB2001FE1CB /* ArcSoftFaceEngine.framework */,
+				79EA25CB21CC8CB3001FE1CB /* ASFRCDManager.h */,
+				79EA25D121CC8CB4001FE1CB /* ASFRCDManager.m */,
+				79EA25CE21CC8CB3001FE1CB /* ASFRManager.h */,
+				79EA25CF21CC8CB3001FE1CB /* ASFRManager.m */,
+				79EA25CA21CC8CB3001FE1CB /* ASFRPerson.h */,
+				79EA25D021CC8CB3001FE1CB /* ASFRPerson.m */,
+				79EA25C621CC8CAE001FE1CB /* ASFVideoProcessor.h */,
+				79EA25CC21CC8CB3001FE1CB /* ASFVideoProcessor.mm */,
+				79EA25C721CC8CAE001FE1CB /* FSDKFR.xcdatamodeld */,
+				79EA25CD21CC8CB3001FE1CB /* Utility.h */,
+				79EA25C521CC8CAE001FE1CB /* Utility.m */,
+			);
+			name = ArcSoftFace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +256,7 @@
 		79EA256D21CC891F001FE1CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = EW;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Ethan;
@@ -256,8 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79EA25D821CC8CB4001FE1CB /* ASFRCDManager.m in Sources */,
+				79EA25D521CC8CB4001FE1CB /* ASFVideoProcessor.mm in Sources */,
 				79EA257B21CC891F001FE1CB /* ViewController.swift in Sources */,
+				79EA25D221CC8CB4001FE1CB /* Utility.m in Sources */,
+				79EA25D621CC8CB4001FE1CB /* ASFRManager.m in Sources */,
+				79EA25DD21CC95FC001FE1CB /* EWCameraController.swift in Sources */,
 				79EA257921CC891F001FE1CB /* AppDelegate.swift in Sources */,
+				79EA25D321CC8CB4001FE1CB /* FSDKFR.xcdatamodeld in Sources */,
+				79EA25D721CC8CB4001FE1CB /* ASFRPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,13 +511,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EWArcSoft-Swift",
+				);
 				INFOPLIST_FILE = "EWArcSoft-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ethan.EWArcSoft-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/EWArcSoft-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,13 +536,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8V4DCL3BF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EWArcSoft-Swift",
+				);
 				INFOPLIST_FILE = "EWArcSoft-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ethan.EWArcSoft-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/EWArcSoft-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -586,6 +677,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79EA25C721CC8CAE001FE1CB /* FSDKFR.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79EA25C821CC8CAE001FE1CB /* FSDKFR.xcdatamodel */,
+			);
+			currentVersion = 79EA25C821CC8CAE001FE1CB /* FSDKFR.xcdatamodel */;
+			path = FSDKFR.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 79EA256D21CC891F001FE1CB /* Project object */;
 }
