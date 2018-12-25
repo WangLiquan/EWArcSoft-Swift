@@ -101,11 +101,17 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if takePhone == false {
 
-            guard let cameraData = Utility.getCameraData(from: sampleBuffer) else { return }
-            guard let faceInfoArray = self.videoProcessor.process(cameraData) as? [ASFVideoFaceInfo] else { return }
+            guard let cameraData = Utility.getCameraData(from: sampleBuffer) else {              return }
+            guard let faceInfoArray = self.videoProcessor.process(cameraData) as? [ASFVideoFaceInfo] else {
+                Utility.freeCameraData(cameraData)
+                return
+            }
 
             DispatchQueue.main.async { [weak self] in
-                guard let weakSelf = self else { return }
+                guard let weakSelf = self else {
+                    Utility.freeCameraData(cameraData)
+                    return
+                }
                 if weakSelf.allFaceRectViewArray.count < faceInfoArray.count {
                     for _ in faceInfoArray{
                         let view = UIView()
@@ -117,14 +123,30 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                     let faceRectView: UIView = weakSelf.allFaceRectViewArray[index]
                     let faceInfo: ASFVideoFaceInfo = faceInfoArray[index]
                     faceRectView.frame = weakSelf.dataFaceRectToViewFaceRect(faceRect: faceInfo.faceRect)
-                    guard faceInfo.face3DAngle != nil else { return }
-                    guard faceInfo.face3DAngle.status == 0 else { return }
-                    guard faceInfo.face3DAngle.rollAngle <= 10 && faceInfo.face3DAngle.rollAngle >= -10 else { return }
-                    guard faceInfo.face3DAngle.yawAngle <= 10 && faceInfo.face3DAngle.yawAngle >= -10 else { return }
-                    guard faceInfo.face3DAngle.pitchAngle <= 10 && faceInfo.face3DAngle.pitchAngle >= -10 else { return }
-                    guard CGRect(x: 30, y: 150, width: UIScreen.main.bounds.size.width - 60, height: UIScreen.main.bounds.size.height-300).contains(faceRectView.frame) else { return }
-                    guard let newestAccel = weakSelf.motionManager.gyroData else { return }
-                    guard newestAccel.rotationRate.x < 0.005 && newestAccel.rotationRate.y < 0.005 && newestAccel.rotationRate.z < 0.005 else { return }
+                    guard faceInfo.face3DAngle != nil else {
+                        break
+                    }
+                    guard faceInfo.face3DAngle.status == 0 else {
+                        break
+                    }
+                    guard faceInfo.face3DAngle.rollAngle <= 10 && faceInfo.face3DAngle.rollAngle >= -10 else {
+                        break
+                    }
+                    guard faceInfo.face3DAngle.yawAngle <= 10 && faceInfo.face3DAngle.yawAngle >= -10 else {
+                        break
+                    }
+                    guard faceInfo.face3DAngle.pitchAngle <= 10 && faceInfo.face3DAngle.pitchAngle >= -10 else {
+                        break
+                    }
+                    guard CGRect(x: 30, y: 150, width: UIScreen.main.bounds.size.width - 60, height: UIScreen.main.bounds.size.height-300).contains(faceRectView.frame) else {
+                        break
+                    }
+                    guard let newestAccel = weakSelf.motionManager.gyroData else {
+                        break
+                    }
+                    guard newestAccel.rotationRate.x < 0.005 && newestAccel.rotationRate.y < 0.005 && newestAccel.rotationRate.z < 0.005 else {
+                        break
+                    }
                     weakSelf.takePhone = true
                     let resultImage = weakSelf.getImageFromSampleBuffer(buffer: sampleBuffer)
                     weakSelf.imageBackView.isHidden = false
