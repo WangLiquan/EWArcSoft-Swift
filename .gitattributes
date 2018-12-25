@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
-* text=auto
-*.objective-c linguist-language=swift
+*.h linguist-language=swift
+*.m linguist-language=swift
+
