@@ -16,10 +16,12 @@ protocol EWCameraControllerDelegate {
 class EWCameraController: NSObject {
     public var delegate: EWCameraControllerDelegate?
     public var previewLayer: AVCaptureVideoPreviewLayer?
-
+    /// AVCaptureSession是AVFoundation的核心类,用于捕捉视频和音频,协调视频和音频的输入和输出流.
     private let captureSession = AVCaptureSession()
+    /// 捕捉连接——AVCaptureConnection,捕捉连接负责将捕捉会话接收的媒体类型和输出连接起来
     private var videoConnection: AVCaptureConnection?
-    private var captureDevice:AVCaptureDevice!
+    /// 捕捉设备
+    private var captureDevice: AVCaptureDevice!
 
     public func setUpCaptureSession(videoOrientation: AVCaptureVideoOrientation){
         captureSession.beginConfiguration()
@@ -60,9 +62,11 @@ class EWCameraController: NSObject {
         guard videoConnection != nil else {
             return 
         }
+        /// 设置镜像展示,不设置或赋值为false则获取图片是延垂直线相反
         if videoConnection!.isVideoMirroringSupported{
             videoConnection?.isVideoMirrored = true
         }
+        /// 设置摄像头位置
         if videoConnection!.isVideoOrientationSupported{
             videoConnection?.videoOrientation = videoOrientation
         }
@@ -83,6 +87,7 @@ class EWCameraController: NSObject {
     }
 
 }
+
 extension EWCameraController: AVCaptureVideoDataOutputSampleBufferDelegate{
     /// 输出流代理方法,实时调用
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -91,7 +96,6 @@ extension EWCameraController: AVCaptureVideoDataOutputSampleBufferDelegate{
         }
     }
 }
-
 
 extension EWCameraController: EWCameraControllerDelegate{
     func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {

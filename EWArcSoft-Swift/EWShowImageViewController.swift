@@ -15,7 +15,7 @@ class EWShowImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        let imageView = UIImageView(frame: CGRect(x:( UIScreen.main.bounds.size.width - 161)/2, y: 261, width: 161, height: 161))
+        let imageView = UIImageView(frame: UIScreen.main.bounds)
         imageView.image = image
         imageView.layer.cornerRadius = 80.5
         imageView.layer.masksToBounds = true
