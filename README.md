@@ -15,17 +15,15 @@
 
 4. 加入必需框架
 
-5. 将一个文件的后缀名改为.mm
+5. 激活引擎
 
-6. 激活引擎
+6. 使用AVFondation框架,实现CameraController,开启前置摄像头,并创建数据回调delegate
 
-7. 使用AVFondation框架,实现CameraController,开启前置摄像头,并创建数据回调delegate
+7. 新建VideoCheckViewController,实现页面.
 
-8. 新建VideoCheckViewController,实现页面.
+8. 添加陀螺仪判断,以保证照片清晰度
 
-9. 添加陀螺仪判断,以保证照片清晰度
-
-10. 在delegate回调中实现主要功能.
+9. 在delegate回调中实现主要功能.
 
 
 <br>

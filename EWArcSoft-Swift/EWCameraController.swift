@@ -97,9 +97,3 @@ extension EWCameraController: AVCaptureVideoDataOutputSampleBufferDelegate{
     }
 }
 
-extension EWCameraController: EWCameraControllerDelegate{
-    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-
-    }
-
-}
