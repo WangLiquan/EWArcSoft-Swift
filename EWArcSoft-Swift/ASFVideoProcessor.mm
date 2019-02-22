@@ -240,7 +240,7 @@
                 {
                     self.frPerson = nil;
                 }
-                dispatch_semaphore_signal(_processFRSemaphore);
+                dispatch_semaphore_signal(self->_processFRSemaphore);
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     if(self.delegate && [self.delegate respondsToSelector:@selector(processRecognized:)])
                         [self.delegate processRecognized:self.frPerson.name];

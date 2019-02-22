@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+// swiftlint:disable type_name
 class EWArcSoft_SwiftUITests: XCTestCase {
 
     override func setUp() {

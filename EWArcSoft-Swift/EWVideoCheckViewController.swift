@@ -81,7 +81,7 @@ class EWVideoCheckViewController: UIViewController {
         self.cameraController.stopCaptureSession()
     }
     /// 将虹软获取的人脸rect转换成CRRect类型
-    private func dataFaceRectToViewFaceRect(faceRect: MRECT) -> CGRect{
+    private func dataFaceRectToViewFaceRect(faceRect: MRECT) -> CGRect {
         var frameRect: CGRect = CGRect.zero
         let viewFrame = self.view.frame
         let faceWidth = faceRect.right - faceRect.left
@@ -93,7 +93,7 @@ class EWVideoCheckViewController: UIViewController {
         return frameRect
     }
     /// 开始陀螺仪判断
-    private func startMotionManager(){
+    private func startMotionManager() {
         motionManager.startGyroUpdates()
     }
     /// 根据CMSampleBuffer媒体文件获取相片
@@ -128,7 +128,7 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                 }
                 /// 获取人脸view数组是为了判断rect
                 if weakSelf.allFaceRectViewArray.count < faceInfoArray.count {
-                    for _ in faceInfoArray{
+                    for _ in faceInfoArray {
                         let view = UIView()
                         weakSelf.view.addSubview(view)
                         weakSelf.allFaceRectViewArray.append(view)
@@ -175,7 +175,7 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                     /// 添加一个缩小动画,并在动画结束后跳转到新页面
                     UIView.animate(withDuration: 1.3, animations: {
                         weakSelf.showImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                    }, completion: { (finished) in
+                    }, completion: { (_) in
                         let vc = EWShowImageViewController()
                         vc.image = resultImage
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0, execute: {

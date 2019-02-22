@@ -23,5 +23,4 @@ class EWShowImageViewController: UIViewController {
         self.view.addSubview(imageView)
     }
 
-
 }

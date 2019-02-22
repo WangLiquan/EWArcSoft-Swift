@@ -11,17 +11,15 @@ import AVFoundation
 //// 为AVCaptureVideoOrientation添加拓展,实现从UIInterFaceOrientation的转换
 extension AVCaptureVideoOrientation {
     var uiInterfaceOrientation: UIInterfaceOrientation {
-        get {
-            switch self {
-            case .portrait:
-                return .portrait
-            case .portraitUpsideDown:
-                return .portraitUpsideDown
-            case .landscapeRight:
-                return .landscapeRight
-            case .landscapeLeft:
-                return .landscapeLeft
-            }
+        switch self {
+        case .portrait:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .landscapeRight:
+            return .landscapeRight
+        case .landscapeLeft:
+            return .landscapeLeft
         }
     }
 

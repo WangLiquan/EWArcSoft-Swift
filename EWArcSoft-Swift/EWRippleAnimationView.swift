@@ -33,7 +33,7 @@ class EWRippleAnimationView: UIView {
         self.layer.addSublayer(animationLayer)
     }
 
-    private func getAnimationGroupAnimations(array: Array<CAAnimation>, index: Int) -> CAAnimationGroup{
+    private func getAnimationGroupAnimations(array: [CAAnimation], index: Int) -> CAAnimationGroup {
         let defaultCurve = CAMediaTimingFunction(name: .default)
         let animationGroup = CAAnimationGroup()
         animationGroup.fillMode = .backwards
@@ -46,8 +46,7 @@ class EWRippleAnimationView: UIView {
         return animationGroup
     }
 
-
-    private func pulsingLayer(rect: CGRect, animation animationGroup: CAAnimationGroup) -> CALayer{
+    private func pulsingLayer(rect: CGRect, animation animationGroup: CAAnimationGroup) -> CALayer {
         let pulsingLayer = CALayer()
         pulsingLayer.frame = CGRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height)
         pulsingLayer.backgroundColor = UIColor(red: 255/255, green: 216/255, blue: 87/255, alpha: 0.5).cgColor
@@ -58,7 +57,7 @@ class EWRippleAnimationView: UIView {
         return pulsingLayer
     }
 
-    private func getAnimationArray() -> Array<CAAnimation>{
+    private func getAnimationArray() -> [CAAnimation] {
         var animationArray: [CAAnimation]
         let scaleAnimation = self.getScaleAnimation()
         let borderColorAnimation = self.getBorderColorAnimation()
@@ -67,7 +66,7 @@ class EWRippleAnimationView: UIView {
         return animationArray
     }
 
-    private func getBorderColorAnimation() -> CAKeyframeAnimation{
+    private func getBorderColorAnimation() -> CAKeyframeAnimation {
         let borderColorAnimation = CAKeyframeAnimation()
         borderColorAnimation.keyPath = "borderColor"
         borderColorAnimation.values = [UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5).cgColor,
@@ -78,7 +77,7 @@ class EWRippleAnimationView: UIView {
         return borderColorAnimation
     }
 
-    private func getScaleAnimation() -> CABasicAnimation{
+    private func getScaleAnimation() -> CABasicAnimation {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.fromValue = 1
         scaleAnimation.toValue = multiple

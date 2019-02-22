@@ -26,20 +26,20 @@ class ViewController: UIViewController {
         self.view.addSubview(cameraButton)
     }
 
-    @objc private func onClickCameraButton(){
+    @objc private func onClickCameraButton() {
         self.present(EWVideoCheckViewController(), animated: true, completion: nil)
     }
 
-    @objc private func onClickActivateButton(){
+    @objc private func onClickActivateButton() {
         let appid = "827JymBcUZD7E5GKisw4jVGL3JvEWAjcJyHkhGzR7iH4"
         let sdkkey = "CSHHVMxni2LNY9VP8tq9UF2japndSZcXvFjxAStdrV9B"
         let engine = ArcSoftFaceEngine()
         let mr = engine.active(withAppId: appid, sdkKey: sdkkey)
-        if mr == ASF_MOK || mr == MERR_ASF_ALREADY_ACTIVATED{
+        if mr == ASF_MOK || mr == MERR_ASF_ALREADY_ACTIVATED {
             let alertController = UIAlertController(title: "SDK激活成功", message: "", preferredStyle: .alert)
             self.present(alertController, animated: true, completion: nil)
             alertController.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
-        }else {
+        } else {
             let result = "SDK激活失败: \(mr)"
             let alertController = UIAlertController(title: result, message: "", preferredStyle: .alert)
             self.present(alertController, animated: true, completion: nil)
@@ -48,4 +48,3 @@ class ViewController: UIViewController {
     }
 
 }
-
