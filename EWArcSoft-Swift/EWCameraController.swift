@@ -9,12 +9,12 @@
 import UIKit
 import AVFoundation
 
-protocol EWCameraControllerDelegate {
+protocol EWCameraControllerDelegate: class {
     func captureOutput(_ output: AVCaptureOutput,didOutput sampleBuffer: CMSampleBuffer,from connection: AVCaptureConnection)
 }
 
 class EWCameraController: NSObject {
-    public var delegate: EWCameraControllerDelegate?
+    public weak var delegate: EWCameraControllerDelegate?
     public var previewLayer: AVCaptureVideoPreviewLayer?
     /// AVCaptureSession是AVFoundation的核心类,用于捕捉视频和音频,协调视频和音频的输入和输出流.
     private let captureSession = AVCaptureSession()

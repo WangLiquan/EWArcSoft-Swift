@@ -120,7 +120,6 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                 Utility.freeCameraData(cameraData)
                 return
             }
-
             DispatchQueue.main.async { [weak self] in
                 guard let weakSelf = self else {
                     Utility.freeCameraData(cameraData)
@@ -134,7 +133,7 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                         weakSelf.allFaceRectViewArray.append(view)
                     }
                 }
-                for (index,_) in faceInfoArray.enumerated() {
+                for index in faceInfoArray.indices {
                     let faceRectView: UIView = weakSelf.allFaceRectViewArray[index]
                     let faceInfo: ASFVideoFaceInfo = faceInfoArray[index]
                     faceRectView.frame = weakSelf.dataFaceRectToViewFaceRect(faceRect: faceInfo.faceRect)
