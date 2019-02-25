@@ -108,7 +108,33 @@ class EWVideoCheckViewController: UIViewController {
         }
         return nil
     }
-
+    /// 进行人脸识别结果筛选
+    private func faceInfoScreening(faceInfo: ASFVideoFaceInfo) -> Bool {
+        //// 判断face3DAngle,保证人脸正对摄像头
+        guard faceInfo.face3DAngle != nil else {
+            return false
+        }
+        guard faceInfo.face3DAngle.status == 0 else {
+            return false
+        }
+        guard faceInfo.face3DAngle.rollAngle <= 10 && faceInfo.face3DAngle.rollAngle >= -10 else {
+            return false
+        }
+        guard faceInfo.face3DAngle.yawAngle <= 10 && faceInfo.face3DAngle.yawAngle >= -10 else {
+            return false
+        }
+        guard faceInfo.face3DAngle.pitchAngle <= 10 && faceInfo.face3DAngle.pitchAngle >= -10 else {
+            return false
+        }
+        /// 判断陀螺仪实时加速度,保证手机在尽量平稳的状态
+        guard let newestAccel = self.motionManager.gyroData else {
+            return false
+        }
+        guard newestAccel.rotationRate.x < 0.000005 && newestAccel.rotationRate.y < 0.000005 && newestAccel.rotationRate.z < 0.000005 else {
+            return false
+        }
+        return true
+    }
 }
 
 extension EWVideoCheckViewController: EWCameraControllerDelegate {
@@ -137,32 +163,12 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                     let faceRectView: UIView = weakSelf.allFaceRectViewArray[index]
                     let faceInfo: ASFVideoFaceInfo = faceInfoArray[index]
                     faceRectView.frame = weakSelf.dataFaceRectToViewFaceRect(faceRect: faceInfo.faceRect)
-                    //// 判断face3DAngle,保证人脸正对摄像头
-                    guard faceInfo.face3DAngle != nil else {
-                        break
-                    }
-                    guard faceInfo.face3DAngle.status == 0 else {
-                        break
-                    }
-                    guard faceInfo.face3DAngle.rollAngle <= 10 && faceInfo.face3DAngle.rollAngle >= -10 else {
-                        break
-                    }
-                    guard faceInfo.face3DAngle.yawAngle <= 10 && faceInfo.face3DAngle.yawAngle >= -10 else {
-                        break
-                    }
-                    guard faceInfo.face3DAngle.pitchAngle <= 10 && faceInfo.face3DAngle.pitchAngle >= -10 else {
+                    guard weakSelf.faceInfoScreening(faceInfo: faceInfo) == true else {
                         break
                     }
                     /// 判断人脸View.frame,保证人脸在扫描框中
                     guard CGRect(x: 30, y: 150, width: UIScreen.main.bounds.size.width - 60, height: UIScreen.main.bounds.size.height-300).contains(faceRectView.frame) else {
-                        break
-                    }
-                    /// 判断陀螺仪实时加速度,保证手机在尽量平稳的状态
-                    guard let newestAccel = weakSelf.motionManager.gyroData else {
-                        break
-                    }
-                    guard newestAccel.rotationRate.x < 0.000005 && newestAccel.rotationRate.y < 0.000005 && newestAccel.rotationRate.z < 0.000005 else {
-                        break
+                            break
                     }
                     /// 全部条件满足,则拍照.
                     weakSelf.takePhone = true
@@ -181,7 +187,6 @@ extension EWVideoCheckViewController: EWCameraControllerDelegate {
                             weakSelf.present(vc, animated: false, completion: nil)
                         })
                     })
-
                 }
             }
             /// 释放内存!!! 重要!!!
