@@ -1,5 +1,7 @@
 # EWArcSoft-Swift
-<h3>Swift版本的虹软面部识别ArcFace2.0SDK接入</h3>
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
+Swift版本的虹软面部识别ArcFace2.0SDK接入
 
 # 实现功能:
 
